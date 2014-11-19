@@ -1,0 +1,106 @@
+.selectbox (@select-width, @select-height, @select-btn-width, @select-btn-picture) {
+	.inlineblock;
+	margin-left: 3px;
+
+	&.opened {
+		.selectbox__display {
+			border-bottom: 0 none;
+			.border-radius(3px 3px 0 0);
+			padding-bottom: 1px;
+
+			&:hover {
+				background: #edecec;
+			}
+		}
+
+		.selectbox__dropdown {
+			display: block;
+		}
+	}
+
+
+	.selectbox__inner {
+		position: relative;
+	}
+
+	.selectbox__display {
+		width: @select-width;
+		border: 1px solid #bdbdbd;
+		.border-radius(3px);
+		background: #ffffff;
+		.clearfix;
+		cursor: pointer;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.selectbox__display-title {
+		float: left;
+		width: @select-width - @select-btn-width - 5;
+
+	}
+
+	.selectbox__title-text {
+		font-size: 12px;
+		line-height: @select-height;
+		color: #686868;
+		padding-left: 11px;
+		height: @select-height;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.selectbox__display-btn {
+		width: @select-btn-width;
+		float: left;
+		height: @select-height;
+		background: transparent;
+		top: 0;
+		right: 0;
+		position: absolute;
+	}
+
+	.selectbox__btn-icon {
+		width: @select-btn-width;
+		height: @select-height;
+		background: @select-btn-picture center center no-repeat;
+	}
+
+	.selectbox__dropdown {
+		position: absolute;
+		top: 100%;
+		left: 0px;
+		right: 0px;
+		background: #ffffff;
+		border: 1px solid #bdbdbd;
+		border-top: 0 none;
+		.border-radius(0 0 5px 5px);
+		overflow: hidden;
+		display: none;
+		z-index: 1000;
+	}
+
+	.selectbox__dropdown-item {
+		&.selected {
+			.selectbox__item-link {
+				background: #edecec;
+			}
+		}
+	}
+
+	.selectbox__item-link {
+		font-size: 12px;
+		line-height: 14px;
+		color: #686868;
+		padding-left: 13px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		cursor: pointer;
+		display: block;
+
+		&:hover {
+			background: #edecec;
+		}
+	}
+}
